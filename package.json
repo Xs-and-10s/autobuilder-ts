@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "A strongly-typed, auto-building Builder Pattern for TypeScript",
   "main": "dist/index.js",
+  "type": "module",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
