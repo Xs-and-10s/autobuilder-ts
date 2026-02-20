@@ -1,0 +1,46 @@
+{
+  "name": "autobuilder-ts",
+  "version": "1.0.0",
+  "description": "A strongly-typed, auto-building Builder Pattern for TypeScript",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "typescript",
+    "builder",
+    "builder-pattern",
+    "fluent-api",
+    "type-safe",
+    "auto",
+    "design",
+    "pattern",
+    "autobuilder",
+    "autobuilder-ts"
+  ],
+  "homepage": "https://github.com/Xs-and-10s/autobuilder-ts#readme",
+  "bugs": {
+    "url": "https://github.com/Xs-and-10s/autobuilder-ts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xs-and-10s/autobuilder-ts.git"
+  },
+  "license": "MIT",
+  "author": "Mark Manley",
+  "scripts": {
+    "build": "tsc",
+    "format": "oxfmt --write src tests",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "lint:watch": "oxlint --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run format && npm run lint && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.34.0",
+    "oxlint": "^1.49.0",
+    "typescript": "^5.9.3"
+  }
+}
