@@ -11,10 +11,10 @@ type MissingKeysError<Missing> = {
 };
 
 // 3. Subtracts keys we already have from the keys we expect
-type Remaining<
-  ExpectedKeys extends PropertyKey,
-  Current extends object,
-> = Exclude<ExpectedKeys, keyof Current>;
+type Remaining<ExpectedKeys extends PropertyKey, Current extends object> = Exclude<
+  ExpectedKeys,
+  keyof Current
+>;
 
 // 4. Cosmestic type to flatten intersections for IDE readability
 type Compute<T> = { [K in keyof T]: T[K] } & {};
@@ -68,10 +68,7 @@ class AutoBuilderImpl<
       return newState; // Auto-build triggers!
     }
 
-    return new AutoBuilderImpl<Target, ExpectedKeys, any>(
-      this.targetKeys,
-      newState,
-    ) as any;
+    return new AutoBuilderImpl<Target, ExpectedKeys, any>(this.targetKeys, newState) as any;
   }
 }
 
