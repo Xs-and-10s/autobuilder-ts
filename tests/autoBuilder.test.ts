@@ -31,9 +31,7 @@ describe("autoBuilder-ts", () => {
   });
 
   it("Scenario 2: Waits for optional keys if they are part of the plan", () => {
-    const builder = autoBuilder
-      .returns<UserSchema>()
-      .plan("id", "username", "bio");
+    const builder = autoBuilder.returns<UserSchema>().plan("id", "username", "bio");
 
     const step1 = builder.with("id", 1).with("username", "user1");
 
@@ -47,9 +45,7 @@ describe("autoBuilder-ts", () => {
   });
 
   it("Scenario 3: Safely handles Falsy values (0, false, null, undefined)", () => {
-    const builder = autoBuilder
-      .returns<ComplexSchema>()
-      .plan("data", "count", "config");
+    const builder = autoBuilder.returns<ComplexSchema>().plan("data", "count", "config");
 
     const finalObject = builder
       .with("data", null) // Falsy
